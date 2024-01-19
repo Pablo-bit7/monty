@@ -1,6 +1,11 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/* Header files */
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+
 /**
  * struct stack_s - doubly linked list rep of a stack (or queue)
  * @n: integer
@@ -30,6 +35,13 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/* Function prototypes */
+void process_file(const char *filename);
+void process_line(char *line, stack_t **stack, unsigned int line_number);
+int is_valid_integer(const char *str, int *value);
+void push(stack_t **stack, int value);
+void pall(stack_t *stack);
 
 #endif /* MONTY_H */
 

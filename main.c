@@ -1,6 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - Entry point for the Monty program
@@ -16,17 +14,8 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    FILE *file = fopen(argv[1], "r");
-    if (file == NULL)
-    {
-        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-        exit(EXIT_FAILURE);
-    }
+    process_file(argv[1]);
 
-    // TODO: Read and process the file line by line
-    // TODO: Implement the Monty interpreter logic
-
-    fclose(file);
-    return EXIT_SUCCESS;
+    return (EXIT_SUCCESS);
 }
 
